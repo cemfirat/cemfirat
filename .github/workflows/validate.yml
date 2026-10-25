@@ -1,0 +1,30 @@
+name: Profile README CI
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate profile README
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate README
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          text = Path("README.md").read_text(encoding="utf-8")
+          assert text.strip(), "README is empty"
+
+          markers = ("<<<<<<< ", "=======", ">>>>>>> ")
+          assert not any(
+              line.startswith(markers)
+              for line in text.splitlines()
+          ), "Merge conflict markers found"
+          PY
