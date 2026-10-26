@@ -3,7 +3,7 @@
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
 Information eats attention. Period.
-A purist approach: reduced, focused, and consequential.
+I build the things I need. They give it back.
 
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ```
